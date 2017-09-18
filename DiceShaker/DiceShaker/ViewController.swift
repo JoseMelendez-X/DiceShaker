@@ -24,16 +24,20 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        updateDiceImages()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     //IB-Actions
     @IBAction func rollButtonTapped(_ sender: UIButton) {
+        
+        updateDiceImages()
+    
+    }
+    
+    //Create a function to update the dice images
+    func updateDiceImages() {
         
         //Generate random number between 0-5
         randomDiceIndex1 = Int(arc4random_uniform(6))
@@ -47,6 +51,5 @@ class ViewController: UIViewController {
         diceImageView2.image = UIImage(named: diceImageArray[randomDiceIndex2])
         
     }
-    
 }
 
