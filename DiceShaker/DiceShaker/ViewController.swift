@@ -19,6 +19,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var diceImageView2: UIImageView!
     
+    //Array of all the names of the dice images
+    let diceImageArray = ["dice1", "dice2", "dice3", "dice4", "dice5", "dice6"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -37,6 +40,12 @@ class ViewController: UIViewController {
         
         //Generate random number between 0-5
         randomDiceIndex2 = Int(arc4random_uniform(6))
+        
+        //Change the dice image property
+        diceImageView1.image = UIImage(named: diceImageArray[randomDiceIndex1])
+        
+        diceImageView2.image = UIImage(named: diceImageArray[randomDiceIndex2])
+        
     }
     
 }
