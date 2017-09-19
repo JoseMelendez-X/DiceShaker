@@ -51,5 +51,11 @@ class ViewController: UIViewController {
         diceImageView2.image = UIImage(named: diceImageArray[randomDiceIndex2])
         
     }
+    
+    //Detect when the phones motion has ended
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        
+        updateDiceImages()
+    }
 }
 
